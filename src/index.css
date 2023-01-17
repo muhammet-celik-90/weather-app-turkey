@@ -1,13 +1,313 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('bootstrap/dist/css/bootstrap.min.css');
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+:root {
+  --text-color: rgba(230, 226, 226, 0.979);
+  --bg-color: #303030;
+}
+.container-fluid {
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-header {
+  color: #fff;
+  margin-bottom: 4rem;
+}
+.input-group {
+  max-width: 20rem;
+}
+.alert-box {
+  max-width: 20rem;
+}
+.input-group > button {
+  border: 1px solid rgb(66, 66, 66);
+}
+.home-icon {
+  font-size: 1.4rem;
+  background: transparent;
+  color: gray;
+}
+.city-page {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.city-page-header {
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.city-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 0.3rem;
+}
+.city-card {
+  width: 10rem;
+  cursor: pointer;
+  background-color: rgba(230, 226, 226, 0.979);
+  font-size: 0.9rem;
+}
+.city-card:hover {
+  opacity: .8;
+}
+.city-card-body {
+  display: flex;
+  flex-direction: row;
+  padding: 0.2rem;
+}
+.city-plate {
+  background-color: rgb(45, 204, 188);
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  padding: 0.17rem 0.2rem;
+  border: 1px solid rgba(100, 100, 111, 0.2);
+  text-align: center;
+}
+.city-card-body > span:last-child {
+  margin-left: auto;
+  transform: translateY(15%);
+}
+.weather-page-header {
+  color: #fff;
+  padding: 2rem 2rem;
+}
+.weather-info {
+  max-width: var(--weather-info-width);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-side {
+  margin-top: 2rem;
+}
+.weather-sum {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 5rem;
+}
+.weather-sum > img {
+  font-size: 1.5rem;
+  transform: translateY(-25%) translateX(-25%);
+}
+.weather-sum > h4 {
+  transform: translateY(-50%);
+}
+.right-side-info-header {
+  color: rgb(172, 172, 179);
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+.select-area {
+  color: gray;
+  background-color: transparent;
+  border-color: gray;
+  min-width: 20rem;
+}
+.select-area > option {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+.btn-cities {
+  background-color: var(--bg-color);
+  border-color: gray;
+  width: 10rem;
+  margin-top: 0.3rem;
+  color: var(--text-color);
+}
+.btn-cities:last-child {
+  margin-left: 0.2rem;
+}
+.forecast-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.forecast-card {
+  padding: 2rem 1.5rem;
+  max-width: 98%;
+  opacity: .9;
+  background-color: rgb(166, 209, 113);
+}
+.forecast-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.forecast-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clock {
+  font-size: 0.8rem;
+  color: rgb(71, 71, 71);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* 
+  ##Cihaz = Masaüstü
+  ##Ekran = 1281px 'den yüksek çözünürlükler için
+*/
+
+@media (min-width: 1281px) {
+  .city-page {
+    height: 100vh;
+  }
+  
+}
+
+/* 
+  ##Cihaz = Laptoplar, Masaüstü
+  ##Ekran = 1025px to 1280px Arası Ekranlar
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  
+}
+
+/* 
+  ##Cihaz = Tabletler, Ipad (portrait/dikey modda)
+  ##Ekran = 768px to 1024px Arası Ekranlar
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  
+}
+
+/* 
+  ##Cihaz = Tabletler, Ipad (landscape/yatay modda)
+*/
+
+@media (min-width: 768px) and (max-width: 850px) {
+  .forecast-div {
+    flex-direction: column;
+  }
+  .forecast-title {
+    text-align: center;
+  }
+  
+}
+
+/* 
+  ##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)
+  ##Ekran = 481px to 767px Arası Ekranlar
+*/
+
+@media (min-width: 499px) and (max-width: 767px) {
+  .weather-info {
+    flex-direction: column;
+  }
+  .middle-side {
+    margin-bottom: 1rem;
+  }
+  .right-side {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  .forecast-div {
+    flex-direction: column;
+  }
+  .forecast-title {
+    text-align: center;
+  }
+}
+
+@media (min-width: 406px) and (max-width: 498px) {
+  .weather-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .middle-side {
+    margin-bottom: 1rem;
+  }
+  .forecast-div {
+    flex-direction: column;
+  }
+  .forecast-title {
+    text-align: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 405px) {
+  .weather-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .middle-side {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .middle-side > select {
+    min-width: none;
+    width: 100%;
+  }
+  .btn-cities{
+    width: 100%;
+  }
+  .btn-cities:last-child {
+    margin-left: 0rem;
+  }
+  .forecast-div {
+    flex-direction: column;
+  }
+  .forecast-title {
+    text-align: center;
+  }
+}
+@media (max-width: 319px) {
+  .weather-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .middle-side {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .btn-cities {
+    width: 100%;
+  }
+  .btn-cities:last-child {
+    margin-left: 0rem;
+  }
+  .forecast-div {
+    flex-direction: column;
+  }
+  .forecast-title {
+    text-align: center;
+  }
 }

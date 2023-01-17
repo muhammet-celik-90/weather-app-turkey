@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import CityList from './pages/CityList';
+import Home from './pages/Home';
+import ErrorPage from './pages/ErrorPage';
+import WeatherDetail from './pages/WeatherDetail';
+import Map from './pages/Map';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "Hava Durumu | Türkiye"
+  })
+
+  const APIKey = useSelector((state) => state.APIKey.value)
+  //console.log(APIKey)
+
+   const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home/>,
+      errorElement: <ErrorPage />
+    },
+    {
+      path: "/iller",
+      element: <CityList/>
+    },
+    {
+      path: "/havadurumu",
+      element: <WeatherDetail/>
+    },
+    {
+      path: "/harita",
+      element: <Map/>
+    }
+  ])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <RouterProvider router={router}/>
+  )
 }
 
 export default App;
