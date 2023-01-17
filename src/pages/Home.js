@@ -1,4 +1,4 @@
-import Container from "react-bootstrap/container"
+import {Container} from "react-bootstrap"
 import Input from "../components/Input"
 
 export default function Home() {
