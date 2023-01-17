@@ -1,4 +1,4 @@
-import Card from 'react-bootstrap/card';
+import {Card} from 'react-bootstrap';
 import cities from '../cities.json';
 import { useNavigate } from 'react-router-dom';
 
